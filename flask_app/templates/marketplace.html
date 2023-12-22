@@ -1,0 +1,26 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<!-- <li class="homework_box"><a class="homework">{{ user }}</p></li>  -->
+<h1 class="fun_fact">Hi, {{user}}</h1>
+
+{% if user == 'admin@email.com' %}
+<div class="button_wrapper">
+    <a href="/adminpage"><button class="buttonPage" id="adminpage">Administration Page</button></a>
+</div>
+{% endif %}
+
+
+
+<h2 class="fun_fact"> Welcome to NFT Trading MarketPlace!</h2>
+<hr>
+<h3 class="fun_fact">Would you like to  sell your NFT or buy a new NFT?</h3>
+<div class="button_wrapper">
+    <a href="/sellerpage"><button class="buttonPage" id="sellerpage">Seller's Market</button></a>
+    <a href="/buyerpage"><button class="buttonPage" id="buyerpage">Buyer's Market</button></a>
+</div>
+<hr>
+
+
+
+{% endblock %}

@@ -1,0 +1,129 @@
+/* wrapper for all instittuions */
+.institution_wrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    font-size: calc(lem+2vw);
+    margin-bottom: 0.5vw;
+    margin-top: 0.5vw;
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+/* wrapper for all positions */
+.position_wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2vw;
+    margin-right: 1vw;
+    position: relative;
+    font-size: calc(lem+2vw);
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+/* item in resume */
+li {
+    list-style-type: none;
+    display: inline;
+    flex: 1;
+}
+/* empty item to style resume */
+.empty_li {
+    list-style-type: none;
+    display: inline;
+    flex: 4;
+}
+/* wrapper for all experinces */
+.experience_wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2vw;
+    margin-right: 4vw;
+    position: relative;
+    margin-right: 1vw;
+    margin-left: 1vw;
+
+}
+
+/* description of the experience */
+.exp_description {
+    display: flex;
+
+}
+/* class for the name */
+.name {
+    flex: 2;
+    font-size: larger;
+    font-weight: bold;
+}
+/* class for the title*/
+.title {
+    font-size: large;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+/* class for the skills */
+.skills {
+    font-size: small;
+    margin-left: 3.5vw;
+}
+/* class for the description */
+.description{
+    margin-left: 3vw; 
+}
+
+/* class to check if disabled */
+.isDisabled {
+    cursor: not-allowed;
+  }
+
+/* enter box */
+.enter_box{
+    width: 50%;
+    font-size: medium;
+    color: rgb(0, 0, 0);
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+/* name of the enter box */
+.enter_box_name{
+    flex: 2;
+    width: 40%;
+    font-size: medium;
+    color: rgb(0, 0, 0);
+    margin-right: 1vw;
+    margin-left: 1vw; 
+}
+/* class for the box */
+.box_name {
+    display: inline-block;
+    margin-right: 1%;
+    margin-left: 0.5%;
+}
+/* class for the right box */
+.right_box {
+    width: 30%;
+    margin: 0;
+    display: inline-block;
+}
+
+/* form to add an entry for the resume */
+.entryForm {
+    margin: 0 auto;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    flex-direction: row;
+    background-color: rgb(47, 47, 140);
+    color: rgb(255, 255, 255);
+    border: 0.2vw solid rgb(25, 25, 122);
+    padding: 2rem;
+    display: none;
+    position: fixed;
+    width: 30%;
+    height: 65%;
+    max-width: 35%;
+    z-index: 200000;
+    overflow: auto;
+}

@@ -1,0 +1,30 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<h1 class="fun_fact">Below is a list of projects I worked on in CSE 477</h1>
+<p class="fun_fact">Click an image, or hyperlink in the description to learn more</p>
+<hr>
+<div class="main_wrapper">
+    <li  class="piano_image"><a href="/marketplace"><img src="../static/main/images/marketplace.jpg" loading="lazy" class="project_piano" alt="marketplace"></a></li>
+    <p class="text_box"><span>NFT MarketPlace</span> <br> For my final exam assignemnt in CSE477,
+        I developed an interactive Non-Fungible Token trading marketplace build in pure HTML, CSS and JavaScript. This tool (in addition to my webpage)
+        highlight my ability to build beatiful and mobile-friendly front-end and back-end applications. <a href="/marketplace">Click here to see marketplace!</a></p>
+</div>
+<hr>
+<div class="main_wrapper">
+    <li  class="piano_image"><a href="/piano"><img src="../static/main/images/piano.jpeg" loading="lazy" class="project_piano" alt="piano"></a></li>
+    <p class="text_box"><span>JavaScript Piano</span> <br> As part of my first Homework assignemnt in CSE477,
+        I developed an interactive piano build in pure HTML, CSS and JavaScript. This tool (in addition to my webpage)
+        highlight my ability to build beatiful and mobile-friendly front-end applications. <a href="/piano">Click here to see piano and play!</a></p>
+</div>
+<div class="main_wrapper">
+    <li  class="piano_image"><img src="../static/main/images/CanadianExperience.png" loading="lazy" class="project_piano" alt="piano"></li>
+    <p class="text_box"><span>Canadian Experience</span> <br> This project serves as a strong demonstration of my Object-Oriented Programming skills and is divided into two parts.
+        Firstly, I implemented the 'Canadian Experience,' which comprises 33 classes. It encompasses various functionalities, including multiplayer support, video recording and saving, setting keyframes, and controlling two main characters: Harold and Sparty. Each character consists of multiple movable parts, including the head, body, two arms, and two legs. With this application, you can manipulate the characters and create your own movies! As for the second part, I've introduced 'Harold's Music Machine,' which comprises 20 classes. I seamlessly integrated the Music Machine into the Canadian Experience to add background music to our movies. This feature plays music in the background.
+</div>
+<hr>
+<h1 class="fun_fact"> More coming soon!</h1>
+<hr>
+
+<p>A fun fact about me: <b>{{fun_fact}}</b> </p>
+{% endblock %}

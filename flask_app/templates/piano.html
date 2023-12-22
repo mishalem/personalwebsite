@@ -1,0 +1,43 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<p class="project_text"> Behold piano great and old, it's master slumbers in far off cold, If you wish to see anew, call out to it - we see you. </p>
+            <hr>
+            <div class="awoken_wrapper">
+                <p class="awoken">I have awoken</p>
+                <div class="old_one"><img src="../static/main/images/texture.jpeg" loading="lazy" alt="Old-One" class="old_one"></div> 
+            </div>
+            <div class="piano">
+                <h1 class="great_old_one_text">The Great Old One</h1>
+                <div class="piano_wrapper">
+                    <div class="piano_black_wrapper" >
+                        <div class="black_keys" id="W"><p>W</p></div>
+                        <div class="black_keys"><p>E</p></div>
+                        <div class="black_keys" id="T"><p>T</p></div>
+                        <div class="black_keys"><p>Y</p></div>
+                        <div class="black_keys" id = "U"><p>U</p></div>
+                        <div class="black_keys"><p>O</p></div>
+                        <div class="black_keys" id = "P"><p>P</p></div>
+                    </div>
+                    <div class="piano_white_wrapper">
+                        <div class="white_keys"><p>A</p></div>
+                        <div class="white_keys"><p>S</p></div>
+                        <div class="white_keys"><p>D</p></div>
+                        <div class="white_keys"><p>F</p></div>
+                        <div class="white_keys"><p>G</p></div>
+                        <div class="white_keys"><p>H</p></div>
+                        <div class="white_keys"><p>J</p></div>
+                        <div class="white_keys"><p>K</p></div>
+                        <div class="white_keys"><p>L</p></div>
+                        <div class="white_keys"><p>;</p></div>
+                    </div>
+                </div>
+            </div>
+<!-- Another block of content -->
+<hr>
+
+<p>A fun fact about me: <b>{{fun_fact}}</b> </p>
+<script src="{{ url_for('static', filename='main/js/piano.js') }}"></script>
+{% endblock %}
+
+

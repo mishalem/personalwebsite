@@ -1,0 +1,16 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<!-- Another block of content -->
+<h1>Thank you for the feedback!</h1>
+<h2>Here's what others had to say:</h2>
+<hr>
+<ul>
+{% for comment_id, comment in feedbackData.items() %}
+    <li class="comments">{{ comment['name']}} {{ comment['email']}} said: {{comment['comment']}}</li>
+    <br>
+{% endfor %}
+</ul>
+{% endblock %}
+
+

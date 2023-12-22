@@ -1,0 +1,100 @@
+<!-- FILL ME IN WITH CODE FOR YOUR PAGE LAYOUT -->
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mikhail Lemper's personal page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/footer.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/navbar.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/header.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/resume.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/marketplace.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='main/images/favicon.ico') }}">
+  {% block extracss %}{% endblock %}
+  <script src="{{ url_for('static', filename='main/js/main.js') }}" defer></script>
+  {% block extrajs %}{% endblock %}
+</head>
+
+<body>
+  <div class="whole_page">
+    <article>
+    <!-- The header  -->
+    <header>
+      <div class="banner">
+      </div>
+    </header>
+
+    <!-- The navigation bar -->
+    <nav>
+      <!-- <div> -->
+       <section class="wrapper">
+        {% if user == 'Unknown'  %}
+          <li class="homework_box"><a class="homework">Mikhail's Website</p></li>
+        {% else %}
+          <li class="homework_box"><a class="homework">{{ user }}</p></li> 
+        {% endif %}
+          <li class="home"><a href="/home">Home</a></li>
+          <li class="projects"><a href="/projects">Projects</a></li>
+          <!-- <li class="resume"><a href="/resume">Resume</a></li> -->
+          <li class="resume"><a href="static/main/images/Resume_.pdf">Resume</a></li>
+          <li class="chat"><a href="/chat">Chat</a></li>
+          {% if user == 'Unknown'  %}
+            <li class="login"><a href="/login">Login</a></li>
+          {% else %}
+            <li class="logout"><a href="/logout">Logout</a></li>
+          {% endif %}
+          <li class="menu_bar_box">
+              <a href="https://www.linkedin.com/in/lempermikhail/", title="LinkedIn">
+                  <img src="static/main/images/social-linkedin.png" loading="lazy" alt="LinkedIn" class="linkedin_pic">
+                  <p class="text_linkedin">LinkedIn</p>
+              </a></li>
+          <li class="menu_bar_box" id="menu_bar">
+              <img src="static/main/images/menu-bar.png" id="menu_bar" loading="lazy" alt="Menu_Bar" class="menu_bar"></li>
+      </section>
+      <div class="vertical_wrapper">
+          <li class="vertical_home"
+          ><a href="/home">Home</a></li>
+          <li class="vertical_projects" 
+          ><a href="/projects">Projects</a></li>
+          <li class="vertical_resume"
+          ><a href="/resume">Resume</a></li>
+          <!-- <li class="vertical_resume"><a href="static/main/images/Resume_.pdf">Resume</a></li> -->
+          <li class="vertical_text_linkedin">
+            <li class="vertical_chat"><a href="/chat">Chat</a></li>
+            {% if user == 'Unknown'  %}
+              <li class="vertical_login"><a href="/login">Login</a></li>
+            {% else %}
+              <li class="vertical_logout"><a href="/logout">Logout</a></li>
+            {% endif %}
+          <a href="https://www.linkedin.com/in/lempermikhail/", title="LinkedIn">
+              <p class="box">LinkedIn</p>
+          </a></li> 
+      <!-- </div> -->
+      </div>
+    </nav>
+
+    <!-- The main content  -->
+    <main>
+      {% include 'feedback.html' %}
+      {% block maincontent %}{% endblock %}
+    </main>
+    <!-- The footer of the file -->
+    <footer>
+      <p class="copyright">© 2023 Copyright Mikhail Lemper</p>
+    </footer>
+
+    </article>
+  </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+

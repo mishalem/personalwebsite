@@ -1,0 +1,4 @@
+"nft_id", "description", "owner", "token", "image", "onMarket"
+1, Nice,misha@email.com, 25,NFT01.jpg,1
+2, Good,admin@email.com, 50,NFT02.jpeg,1
+3, All right,misha@email.com, 75,NFT03.jpg,0

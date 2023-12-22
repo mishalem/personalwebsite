@@ -1,0 +1,4 @@
+"inst_id","type","name","department","address","city","state","zip"
+"1","Academia","Michigan State University","Computer Science",NULL,"East Lansing","Michigan",NULL
+"2","Company","CK MATIK-STROY",NULL,NULL,"Moscow",NULL,NULL
+"3","CLub","Google Student Developer CLub",NULL,NULL,"East Lansing","Michigan",NULL

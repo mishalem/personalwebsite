@@ -1,0 +1,5 @@
+"experience_id", "position_id", "name","description", "hyperlink", "start_date", "end_date"
+1, 1, Laboratory assistance, Presented and explained the fundamentals of programming to 60 students during weekly laboratory sessions, https://www.cse.msu.edu/Courses/cse331/,"2023-01-01",NULL
+2, 2, Help Room Assistance, Assisted students during help room hours where I helped students break down complex problems before solving them, https://www.cse.msu.edu/~cse231/Online/, "2022-09-01", "2022-12-15"
+3, 3, Conducting a Report in Excel, Conducted an analysis on potential partners through Microsoft Excel, NULL, 2018/06/01, 2018/08/31
+4, 4, Uniting, Providing an opportunity to help students grow as developers and unite potential talent, NULL, 2022/07/01, NULL

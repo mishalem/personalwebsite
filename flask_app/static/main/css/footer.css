@@ -1,0 +1,12 @@
+/* wrapper for the footer */
+.footer_wrapper {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(238, 235, 235);
+}
+/* Style for the copyright */
+.copyright {
+    font-size: calc(lem+2vw);
+    text-align: center;
+    background-color: rgb(192, 192, 192);
+}

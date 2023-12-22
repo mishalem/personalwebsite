@@ -1,0 +1,94 @@
+{% extends 'shared/layout.html' %}
+
+
+
+{% block maincontent %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<button class="editResume" onclick="SaveChanges()">Save Changes</button>
+<button class="editResume" id="add_entry" >Add Entry</button>
+      <!-- For each institution - generate a row --> 
+      {% for inst_id, inst in resume_data.items() %}
+        <div class="institution_wrapper">
+          <p class="box_name">Institution: </p>
+          <input class="right_box" id="name_{{inst_id}}" title="institution_name" type="text" value="{{ inst['name'] }}" />
+          <li class="empty_li" id="inst_id" value="{{inst_id}}"></li>
+          <input class="enter_box_name" id="department_{{inst_id}}" title="department" type="text" value="{{ inst['department'] }}" />
+          <input class="enter_box_name" id="address_{{inst_id}}" type="text" title="address" value="{{ inst['address'] }}" />
+          <input class="enter_box_name" id="city_{{inst_id}}" type="text" title="city" value="{{ inst['city'] }}" />
+        </div>
+          {% if inst['positions'] != {} %}
+            {% for pos_id, pos in inst['positions'].items() %}
+            <div class="position_wrapper">
+              <li class="empty_li" id="position_id" value="{{pos_id}}"></li>
+              <input class="enter_box_name" id="startdate_{{pos_id}}" type="text" title="start_date" value="{{ pos['start_date'] }}" />
+              <input class="enter_box_name" id="enddate_{{pos_id}}" type="text" title="end_date" value="{{ pos['end_date'] }}" />
+            </div>
+              {% for exp_id, exp in pos['experiences'].items() %}
+                <p class="box_name">Position: </p>
+                <input class="right_box" type="text" id="title_{{pos_id}}" title="title" value="{{ pos['title'] }}" />
+                <br>
+                <p class="box_name">Name: </p>
+                <input class="right_box" type="text" id="expname_{{exp_id}}" title="experience_name" value="{{ exp['name']}}"> 
+                <br>
+                <p class="box_name">Description: </p>
+                <input class="right_box" type="text" id="description_{{exp_id}}" title="description" value="{{ exp['description']}}"> 
+                <br>
+                {% if exp['skills'] != {} %}
+                  {% for skill_id, skills in exp['skills'].items() %}
+                      <p class="box_name">Skills used: </p>
+                      <input class="right_box" type="text" id="skills_{{skill_id}}" title="skill" value="{{ skills['name'] }}" />
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+              <hr>
+            {% endfor %}
+          {% endif %}
+      <hr>
+      {% endfor %}
+      <form class="entryForm" action="/add_entry", method="post">
+        <div>
+            <label for="institution"></label>
+            <input id="institution" name="institution" type="text" title="institution" required placeholder="Institution: ">
+        </div>
+        <div>
+          <label for="department"></label>
+          <input id = "department" name="department" type="text" title="department" placeholder="Department: ">
+      </div>
+      <div>
+        <label for="address"></label>
+        <input id = "address" name="address" type="text" title="address" placeholder="Address: ">
+      </div>
+      <div>
+        <label for="city"></label>
+        <input id = "city" name="city" type="text" title="city" placeholder="City: ">
+     </div>
+        <div>
+            <label for="position"></label>
+            <input id = "position" name="position" type="text" title="position" required placeholder="Position: ">
+        </div>
+        <div>
+          <label for="start_date"></label>
+          <input id = "start_date" name="start_date" type="text" title="start_date" required placeholder="Start Date: ">
+      </div>
+      <div>
+        <label for="end_date"></label>
+        <input id = "end_date" name="end_date" type="text" title="end_date" placeholder="End Date: ">
+    </div>
+        <div>
+            <label for="position_name"></label>
+            <input id="position_name" name="position_name" type="text" title="experience_name" placeholder="Experience Name: ">
+        </div>
+        <div>
+          <label for="position_description"></label>
+          <input id="position_description" name="position_description" type="text" title="description" placeholder="Position Description: ">
+      </div>
+      <div>
+        <label for="skill"></label>
+        <input id="skill" name="skill" type="text" title="skill" placeholder="Skills: ">
+    </div>
+        <input type="submit" placeholder="Send" title="submit" class="sendButton">
+    </form>
+<script src="{{ url_for('static', filename='main/js/editResume.js') }}"></script>
+{% endblock %}
+
+

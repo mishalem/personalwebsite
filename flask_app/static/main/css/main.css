@@ -1,0 +1,410 @@
+body {
+    /* overflow-y: auto; */
+    min-height: 100%;
+}
+.whole_page{
+    min-height: 100%;
+}
+
+.main_wrapper {
+    margin-top: 5%;
+    margin-bottom: 7%;
+    display: flex;
+    flex-direction: row;
+    /* max-width: 80vw; */
+    /* max-height: 50vw; */
+    align-items: center;
+}
+
+
+.image-container {
+    float: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 50%;
+    height: 90vh;
+    margin-left: 5%;
+    border: 5px solid rgb(1, 49, 65);
+    /* margin-right: 20px; */
+    margin-right: 1%;
+    display: inline-block;
+    /* max-height: 400px; */
+    object-fit: contain;
+  }
+
+.first_wrapper{
+    /* display: ; */
+}
+
+.myimage {
+    float: left;
+    background-image: url("../images/my_image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    min-height: 50%;
+    /* margin-left: 10%; */
+    /* border: 5px solid rgb(1, 49, 65); */
+    /* margin-right: 20px; */
+    /* margin-right: 1%; */
+    display: inline-block;
+    object-fit: contain;
+}
+
+.project_piano {
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+.piano_image {
+    float: left;
+    /* background-image: url("../images/piano.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover; */
+    /* width: 40vw;
+    height: 50vh; */
+    width: 100%;
+    height: 100%;
+    /* min-height: 40vh; */
+    /* margin-left: 50px; */
+    margin-left: 1%;
+    border: 5px solid rgb(1, 49, 65);
+    margin-right: 3%;
+    background-position: center center;
+}
+.text_box{
+    font-size: large;
+    width: 50%;
+    height: 45vh;
+    margin: 1%;
+    /* margin-left: 10%; */
+    overflow: auto;
+}
+
+.fun_fact {
+    font-size: calc(lem+2vw);
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 650px) {
+    .main_wrapper {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        column-gap: 5%;
+    }
+    .myimage {
+        width: 100%;
+    }
+    .text_box {
+        width: 100%;
+    }
+    .project_piano{
+        /* border: 5px solid rgb(244, 6, 6); */
+        height: 20vh;
+        width: 30vw;
+    }
+    .piano_image{
+        height: 20vh;
+        width: 30vw;
+    }
+    .text_box{
+        height: 30vh;
+    }
+}
+
+
+@media screen and (max-width: 1050px) {
+    .image-container{
+        height: 45vh;
+        width: 80%;
+    }
+}
+
+span {
+    font-size: 180%;
+}
+/* .project_piano {
+    width: 100%;
+} */
+/* .piano {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+} */
+
+.project_text {
+    width: 100%;
+    text-align: center;
+    flex: 1;
+}
+
+.piano {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(71, 71, 71);
+    width: 650px;
+    height: 500px;
+    border-top-left-radius: 75px;
+    border-top-right-radius: 75px;
+    position: relative;
+    transition: opacity 1s;
+    bottom: 475px;
+}
+
+.piano_wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    position: relative;
+    flex: 7;
+}
+
+.white_keys {
+    position: relative;
+    z-index: 2;
+    background-color: rgb(251, 249, 249);
+    width: 1vw;
+    height: 250px;
+    margin: auto;
+    border-radius: 10px;
+    border: 3px solid rgb(0, 0, 0);
+    box-shadow: -5px rgb(0, 0, 0);
+    flex:1;
+}
+
+.piano_white_wrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    /* bottom: 8vh; */
+    flex: 1;
+}
+
+.piano_black_wrapper {
+    display: flex;
+    z-index: 3;
+    flex-direction: row;
+    top: 125px;
+    position: relative;
+    flex:1
+
+}
+
+.great_old_one_text {
+    text-align: center;
+    color: rgb(250, 248, 248);
+    flex: 3;
+}
+
+.black_keys {
+    position: relative;
+    z-index: 3;
+    background-color: rgb(0, 0, 0);
+    max-width: 25px;
+    height: 120px;
+    margin: auto;
+    border-radius: 5px;
+    border: 3px solid rgb(0, 0, 0);
+    flex: 1;
+}
+
+.piano:hover p{
+    opacity: 1;
+}
+
+.black_keys p{
+    color: rgb(255, 255, 255);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.white_keys p{
+    color: rgb(0, 0, 0);
+    opacity: 0;
+    transition: opacity 0.5s;
+    margin-top: 200px;
+}
+
+#W {
+    left: 12px;
+    transition: background-color 1s;
+    opacity: 1;
+}
+
+#T{
+    left: 16px;
+}
+
+#U{
+    right: 16px;
+}
+#P{
+    right: 8px;
+}
+
+#W.pressed{
+    opacity: 0.5;
+}
+
+.old_one {
+    width: 650px;
+    height: 500px;
+    background-image: url("../images/texture.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin: auto;
+    display: flex;
+    border-top-left-radius: 75px;
+    border-top-right-radius: 75px;
+    position: relative;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.awoken {
+    display: none;
+    font-size: calc(lem+2vw);
+    text-align: center; 
+    bottom: 300px;
+}
+
+.awoken_wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    position: relative;
+}
+.feedback {
+    background-color: rgb(47, 47, 140);
+    color: rgb(255, 255, 255);
+    display: block;
+    /* vertical-align: middle; */
+    right: 0px;
+    width: auto;
+    align-self: top;
+    justify-self: right;
+    margin-top: 15px;
+    cursor: pointer;
+    position: fixed;
+    writing-mode:vertical-rl
+}
+
+.feedback:hover{
+    opacity: 0.5;
+}
+
+.feedbackForm {
+    margin: 0 auto;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    flex-direction: row;
+    background-color: rgb(47, 47, 140);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(25, 25, 122);
+    padding: 2rem;
+    display: none;
+    position: fixed;
+    width: 30%;
+    height: 40%;
+    max-width: 700px;
+    max-height: 700px;
+    z-index: 200000;
+}
+
+input{
+    width: 100%;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-top: 1vw;
+}
+
+.sendButton{
+    background-color: rgb(40, 79, 4);
+    color: bisque;
+    padding: .5rem;
+    width: auto;
+}
+
+ul {
+    list-style: disc; 
+    margin-left: 1.5em; 
+}
+ul li::before {
+    content: "\2022"; 
+    color: rgb(0, 0, 0); 
+    font-size: 1.5em; 
+    margin-right: 0.5em; 
+}
+
+.comments{
+    font-size: 20px;;
+}
+
+
+.login_form {
+    margin: 0 auto;
+    flex-direction: row;
+    /* background-color: rgb(81, 81, 231); */
+    background-color: rgb(47, 47, 140);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(47, 47, 140);
+    padding: 2rem;
+    display: box;
+    position: relative;
+    width: 20%;
+    height: 20%;
+    max-width: 600px;
+    max-height: 600px;
+}
+
+
+.login_form input{
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+.wrong_login_box{
+    padding: 1rem;
+    margin: 0 auto;
+    width: 20%;
+    height: 5%; 
+    background-color: rgb(255, 255, 255); 
+    color: rgb(255, 0, 0);
+    display: none;
+}
+
+
+.wrong_signup_box{
+    padding: 1rem;
+    margin: 0 auto;
+    width: 20%;
+    height: 5%; 
+    background-color: rgb(255, 255, 255); 
+    color: rgb(255, 0, 0);
+    display: none;
+}
+
+
+.editResume{
+    background-color: rgb(47, 47, 140);
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    /* vertical-align: middle; */
+    align-self: top;
+    justify-self: right;
+    cursor: pointer;
+    /* position: fixed; */
+}

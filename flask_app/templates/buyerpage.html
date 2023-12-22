@@ -1,0 +1,36 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<a href="/sellerpage"><button class="editResume" id="sellerpage">Go to Seller's Page</button></a>
+{% if user == 'admin@email.com' %}
+<a href="/adminpage"><button class="editResume" id="sellerpage">Go to Admin's Page</button></a>
+{% endif %}
+<h1 class="fun_fact" id="user_balance" value="{{ balance }}">'{{user}}' Balance: {{balance}} Tokens</h1>
+    <div class="lower_box">
+        <h1 class="fun_fact" id="user" value="{{ user }}">User '{{user}}', Check out These Cool NFT's for Sale</h1>
+        <div class="box_wrapper">
+            {% for nft_id, nft in nft_data.items() %}
+            {% if nft['onMarket'] == 1 %}
+            {% if nft['owner'] != user %}
+                <div class="nft_wrapper">
+                    <img class="nft_image" loading="lazy" src="data:image/jpg;charset=utf-8;base64,{{ nft['image'] }}" alt="My Image">
+                    <div>
+                        <li class="nft_description" id="description_nft" value="{{ nft['description'] }}">Description: {{ nft['description'] }}</li>
+                        <p class="nft_token" id="token_nft" value="{{ nft['token'] }}">Tokens: {{ nft['token'] }}</p>
+                        <p class="invisable" id="nft_id" value="{{ nft_id }}"></p>
+                        <button class="buttonEdit" id="buyNFT" onclick="buyNFT('{{nft_id}}')">Buy NFT</button>
+                    </div>
+                </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <hr>
+<script src="{{ url_for('static', filename='main/js/marketplace.js') }}"></script>
+
+
+{% endblock %}

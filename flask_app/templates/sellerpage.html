@@ -1,0 +1,51 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<a href="/buyerpage"><button class="editResume" id="buyerpage">Go to Buyer's Page</button></a>
+{% if user == 'admin@email.com' %}
+<a href="/adminpage"><button class="editResume" id="sellerpage">Go to Admin's Page</button></a>
+{% endif %}
+<h1 class="fun_fact">'{{user}}' Balance: {{balance}} Tokens</h1>
+<div class="upper_box">
+    <p class="description">Description</p>
+    <div>
+        <label for="description"></label>
+        <input class="description_input" id = "description" required name="description" title="nft_description"  type="text" rows="2" placeholder="Type NFT related description here: ">
+    </div>
+    <p class="token">Token</p>
+    <div>
+        <label for="token"></label>
+        <input class="token_input" id = "token" required name="token" type="number" rows="2" title="token" placeholder="Type token amount here: ">
+    </div>
+<button class="buttonCreate" id="create" onclick="createNFT()">Create NFT</button>
+<button class="buttonUpload" id="upload" onclick="uploadNFT()">Upload NFT</button>
+<form enctype="multipart/form-data">
+    <label for="img">Select image:</label>
+    <input type="file" id="nft_img" title="NFT_image" name="img" accept="image/*">
+</form>
+</div>
+
+<div class="lower_box">
+    <h1 class="fun_fact">User '{{user}}' NFT's</h1>
+    <div class="box_wrapper">
+        {% for nft_id, nft in nft_data.items() %}
+        {% if nft['owner'] == user %}
+            <div class="nft_wrapper">
+                <img class="nft_image" src="data:image/jpg;charset=utf-8;base64,{{ nft['image'] }}" loading="lazy" alt="My Image">
+                <form>
+                    <input class="nft_description" id="nftDescription_{{nft_id}}" title="nft_description" type="text" value="{{ nft['description'] }}" />
+                    <input class="nft_token" id="nftToken_{{nft_id}}" title="nft_token" type="number" value="{{ nft['token'] }}" />
+                    <button class="buttonEdit" id="edit" onclick="editNFT()">Edit NFT</button> 
+                </form>
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+<hr>
+
+
+<script src="{{ url_for('static', filename='main/js/marketplace.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+      {% if user == 'owner@email.com'  %}
+      <li class="editResume"><a href="/editResume">Edit Resume</a></li>
+      {% endif %}
+      <!-- For each institution - generate a row --> 
+      {% for inst_id, inst in resume_data.items() %}
+      <!-- Do something... -->
+        <div class="institution_wrapper">
+          <li class="name">{{ inst['name']}} </li>
+          <li class="empty_li"></li>
+          <li >{{ inst['department']}} </li>
+          <li>{{ inst['address']}} </li> 
+          <li>{{ inst['city']}} </li>  
+        </div>
+          {% if inst['positions'] != {} %}
+            {% for pos_id, pos in inst['positions'].items() %}
+            <!-- Do something else... -->
+            <div class="position_wrapper">
+              <!-- <li class="title" href="<li>{{ pos['hyperlink']}}</li>"", title="title">{{ pos['title']}} </li> -->
+              <li class="empty_li"></li>
+              <li>{{ pos['start_date']}} </li>
+              <li>{{ pos['end_date']}} </li>
+            </div>
+              {% for exp_id, exp in pos['experiences'].items() %}
+                <!-- <h3>{{ exp['name']}}</h3> -->
+                <a class="title" href="{{ exp['hyperlink']  if exp['hyperlink'] != 'NULL' else ''}}" title="{{ pos['title'] }}">{{ pos['title']}} </a>
+                <p class="description">{{ exp['name']}}:{{ exp['description']}}</p> 
+                {% if exp['skills'] != {} %}
+                  {% for skill_id, skills in exp['skills'].items() %}
+                      <p class="skills">Skills used: {{ skills['name']}}</p>
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          {% endif %}
+      <hr>
+      {% endfor %}
+
+{% endblock %}
+
+

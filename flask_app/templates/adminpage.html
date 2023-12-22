@@ -1,0 +1,28 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<a href="/sellerpage"><button class="editResume" id="sellerpage">Go to Seller's Page</button></a>
+<a href="/buyerpage"><button class="editResume" id="buyerpage">Go to Buyer's Page</button></a>
+    <div class="lower_box">
+        <h1 class="fun_fact">User '{{user}}', Check out These Cool NFT's for Sale</h1>
+        <div class="box_wrapper">
+            {% for nft_id, nft in nft_data.items() %}
+                <div class="nft_wrapper">
+                    <img class="nft_image" src="data:image/jpg;charset=utf-8;base64,{{ nft['image'] }}" alt="My Image">
+                    <div>
+                        <p class="nft_description">Description: {{ nft['description'] }}</p>
+                        <p class="nft_token">Tokens: {{ nft['token'] }}</p>
+                        <p class="invisable" id="nft_id" value="{{ nft_id }}"></p>
+                        <button class="buttonEdit" id="edit" onclick="showNFT('{{nft_id}}')">Show</button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <hr>
+<hr>
+<script src="{{ url_for('static', filename='main/js/marketplace.js') }}"></script>
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'shared/layout.html' %}
+
+{% block extrajs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
+
+
+{% block maincontent %}
+<br><br>
+<div class="login_form">
+    <h1>Login</h1>
+    <div>
+        <label for="email"></label>
+        <input id="email_login" name="email" type="text" title="email" required="required" placeholder="Your Email: ">
+    </div>
+    <div>
+        <label for="password"></label>
+        <input id="password" name="password" type="password" title="password" required="required" placeholder="Your Password: ">
+    </div>
+    <input type="submit" value="Login" class="sendButton" title="submit" onclick="checkCredentials()"/>
+</div>
+<br><br>
+<div class="wrong_login_box">Authentication Failure</div>
+<a href="/signup"><button class="editResume" id="signup">Signup</button></a>
+<script src="{{ url_for('static', filename='main/js/signup.js') }}"></script>
+{% endblock %}
+
+

@@ -1,0 +1,214 @@
+/* Upper box is the box where you can create a new NFT or upload an NFT */
+.upper_box{
+    background-color: rgb(7, 210, 210);
+    border: 0.2vw solid rgb(172, 170, 170);
+    padding: 0.5%;
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    margin-top: 2%;
+    grid-template-columns: 3fr 3fr 1fr;
+    grid-template-rows: 4fr 4fr;
+}
+
+/* Create Button */
+.buttonCreate{
+    background-color: rgb(47, 47, 140);
+    color: rgb(255, 255, 255);
+    display:flex;
+    align-self: top;
+    justify-self: right;
+    cursor: pointer;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+/* Upload button */
+.buttonUpload{
+    background-color: rgb(47, 47, 140);
+    color: rgb(255, 255, 255);
+    display:flex;
+    align-self: top;
+    justify-self: right;
+    cursor: pointer;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    margin-top: 4%;
+}
+
+/* Token of an NFT */
+.token{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+/* Description of an NFT */
+.description{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+/* Token input for the NFT */
+.token_input{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    height: 60%;
+}
+
+/* Description input for the NFT */
+.description_input{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    height: 60%;
+}
+
+  /* Code to make the upper box more styled */
+  .upper_box > * {
+    display: flex;
+    align-items: center;
+  }
+  
+  .upper_box > *:not(:last-child) {
+    margin-right: 0.2vw;
+  }
+  
+  .upper_box > *:nth-child(3) {
+    justify-content: space-between;
+  }
+  
+  .upper_box > *:nth-child(4) {
+    justify-content: flex-end;
+  }
+  
+  .upper_box > *:nth-child(5) {
+    justify-content: flex-end;
+  }
+ 
+  
+/* Box where the NFTs are displayed */
+.lower_box{
+    background-color: rgb(7, 210, 210);
+    border: 0.2vh solid rgb(172, 170, 170);
+    padding: 1%;
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    margin-top: 2%;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/*Wrapper for every NFT */
+.nft_wrapper{
+    background-color: #efe8e8;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: auto;
+    align-items: center;
+    border: 0.2vw solid rgb(0, 0, 0);
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+/* Wrapper for all the NFT's in the lower box */
+.box_wrapper{
+  height: 100%;
+  width:100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-auto-rows: minmax(15vw, auto);
+  grid-gap: 4%;
+  align-items: center;
+}
+
+/* Edit button */
+.buttonEdit{
+  background-color: rgb(47, 47, 140);
+  color: rgb(255, 255, 255);
+  display:flex;
+  align-self: top;
+  justify-self: center;
+  cursor: pointer; 
+  height: 40%;
+  width: 40%;
+  align-items: center;
+  object-fit: contain;
+}
+
+/* NFT's token */
+.nft_token{
+    height: 80%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+}
+
+/* NFT's description */
+.nft_description{
+    height: 80%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+}
+
+/* NFT's image */
+.nft_image{
+  object-fit: contain;
+  width: 50%;
+  height: 80%;
+  justify-content: center;
+  border: 0.2vw solid rgb(0, 0, 0);
+  margin-left: 5%;
+}
+
+ /* Button that allows switning between pages */
+.buttonPage{
+  background-color: rgb(47, 47, 140);
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  align-self: top;
+  justify-self: center;
+  cursor: pointer;
+  align-items: center;
+  align-items: center;
+  font-size: 5vh;
+  text-align: center;
+  margin: 0 1vw;
+}
+/* Wrapper for the button */
+.button_wrapper {
+  display: flex;
+  justify-content: center;
+  
+}
+/*sets invisable to display none */
+.invisable{
+  display: none;
+}
+
+/* doesnt display anyransaction */
+.transaction{
+  display: none;
+}

@@ -1,0 +1,263 @@
+/* singular item in nav bar */
+li {
+    list-style-type: none;
+    display: inline;
+}
+
+/* class for item in the nav bar */
+.box {
+    padding: 2%;
+    width: 20vw;
+    height: 2vh;
+    text-align: center;
+    font-size: calc(lem+2vw);
+}
+
+/* class for homework in the nav bar */
+.homework_box {
+    padding: 2%;
+    width: 20vw;
+    height: 2vh;
+    text-align: center;
+    font-size: calc(lem+2vw);
+    flex:5;
+}
+/* class for menu bar in the nav bar */
+.menu_bar_box {
+    padding: 2%;
+    width: 20vw;
+    height: 2vh;
+    text-align: center;
+    font-size: calc(lem+2vw);
+    flex:1;
+}
+/* class for home in the nav bar */
+.home {
+    padding: 2%;
+    width: 20vw;
+    height: 2vh;
+    text-align: center;
+    font-size: calc(lem+2vw); 
+    flex:1;
+}
+
+/* class for project in the nav bar */
+.projects {
+    padding: 2%;
+    width: 20vw;
+    height: 2vh;
+    text-align: center;
+    font-size: calc(lem+2vw);
+    flex:1;
+}
+/* class for resume in the nav bar */
+.resume {
+    padding: 2%;
+    width: 20vw;
+    height: 2vh;
+    text-align: center;
+    font-size: calc(lem+2vw);
+    flex:1;
+}
+/* class for chat in the nav bar */
+.chat {
+    padding: 2%;
+    width: 20vw;
+    height: 2vh;
+    text-align: center;
+    font-size: calc(lem+2vw);
+    flex:1;
+}
+/* class for login in the nav bar */
+.login {
+    padding: 2%;
+    width: 20vw;
+    height: 2vh;
+    text-align: center;
+    font-size: calc(lem+2vw);
+    flex:1;
+}
+/* class for logout in the nav bar */
+.logout {
+    padding: 2%;
+    width: 20vw;
+    height: 2vh;
+    text-align: center;
+    font-size: calc(lem+2vw);
+    flex:1;
+}
+/* class for vertical home in the nav bar */
+.vertical_home {
+    padding: 2%;
+    width: 20vw;
+    height: 2vh;
+    text-align: center;
+    font-size: calc(lem+2vw);
+    flex: 1; 
+}
+/* class for vertical projects in the nav bar */
+.vertical_projects {
+    padding: 2%;
+    width: 20vw;
+    height: 2vh;
+    text-align: center;
+    font-size: calc(lem+2vw);
+    flex: 1;
+}
+/* class for vertical resume in the nav bar */
+.vertical_resume {
+    padding: 2%;
+    width: 20vw;
+    height: 2vh;
+    text-align: center;
+    font-size: calc(lem+2vw);
+    flex: 1;
+}
+
+/* class for vertical chat in the nav bar */
+.vertical_chat {
+    padding: 2%;
+    width: 20vw;
+    height: 2vh;
+    text-align: center;
+    font-size: calc(lem+2vw);
+    flex: 1;
+}
+/* class for vertical login in the nav bar */
+.vertical_login {
+    padding: 2%;
+    width: 20vw;
+    height: 2vh;
+    text-align: center;
+    font-size: calc(lem+2vw);
+    flex: 1;
+}
+/* class for vertical logout in the nav bar */
+.vertical_logout {
+    padding: 2%;
+    width: 20vw;
+    height: 2vh;
+    text-align: center;
+    font-size: calc(lem+2vw);
+    flex: 1;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    background: rgb(1, 49, 65); 
+
+}
+/* class for vertical nav bar */
+.vertical_wrapper {
+    display: none;
+    flex-direction: column;
+    background: rgb(1, 49, 65);  
+    transition: max-height 0.5s;
+}
+/* class for homework in the nav bar */
+.homework {
+    margin-right: 2rem;
+}
+/* class for linkedin pic in the nav bar */
+.linkedin_pic {
+    background-image: url("../images/social-linkedin.png");
+    background-repeat: no-repeat;
+    max-width: 3vw;
+    max-height: 3vh;
+    min-height: 2vh;
+    min-width: 2vw;
+}
+/* class for  text linkedin in the nav bar */
+.text_linkedin {
+    display: none;
+}
+/* class for vertical text linkedin in the nav bar */
+.vertical_text_linkedin {
+    display: block;
+    flex:1;
+}
+
+/* set max size for vido and images */
+img,
+picture,
+video {
+    max-width: 100%;
+}
+/* hovers for items in the nav bar */
+li a:hover {
+    opacity: 0.5;
+}
+
+li a:hover {
+    opacity: 0.5;
+}
+
+li img:hover {
+    opacity: 0.5;
+}
+
+
+li a.homework:hover {
+    opacity: 1;
+}
+
+li a{
+    color: rgb(248, 245, 245);
+    text-decoration: none;
+}
+/* class for menu bar  in the nav bar */
+.menu_bar {
+    background-image: url("../images/menu-bar.png");
+    display: none;
+    background-repeat: no-repeat;
+    max-width: 3vw;
+    max-height: 3vh;
+    min-height: 2vh;
+    min-width: 2vw;
+}
+/* in case size of the screen is less than 650(given by the professor, 
+I set nav bar vertical when menu bar is pressed  */
+@media screen and (max-width: 650px) {
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+    .linkedin_pic {
+        display: none;
+    }
+
+    .text_linkedin {
+        display: none;
+    }
+    .menu_bar{
+        display: block;
+        background-image: url("../images/menu-bar.png");
+        background-repeat: no-repeat;
+        max-width: 3vw;
+        max-height: 3vh;
+        min-height: 2vh;
+        min-width: 2vw;
+    }
+    .home{
+        display: none;
+    }
+    .resume{
+        display: none;
+    }
+    .projects{
+        display: none;
+    }
+    .vertical_wrapper{
+        display: none;
+    }
+    .chat{
+        display: none;
+    }
+    .login{
+        display: none;
+    }
+    .logout{
+        display: none;
+    }
+}

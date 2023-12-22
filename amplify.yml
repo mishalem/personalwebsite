@@ -1,12 +1,10 @@
 version: 1
 frontend:
   phases:
-    # IMPORTANT - Please verify your build commands
     build:
-        - pip install -r requirements.txt
-        - python app.py
+      commands:
+        - docker build -t my-flask-app .
   artifacts:
-    # IMPORTANT - Please verify your build output directory
     baseDirectory: /
     files:
       - '**/*'
